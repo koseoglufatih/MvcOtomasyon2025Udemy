@@ -11,10 +11,14 @@ namespace MvcOtomasyon2025Udemy.Controllers
     {
         // GET: Product
         FamuContext _context = new FamuContext();
-        public ActionResult Index()
+        public ActionResult Index(string p)
         {
-            var products = _context.Products.Where(x => x.Status == true).ToList();
-            return View(products);
+            var products = from x in _context.Products select x;
+            if (!string.IsNullOrEmpty(p))
+            {
+                products = products.Where(y => y.ProductName.Contains(p));
+            }
+            return View(products.ToList());
         }
 
         [HttpGet]
