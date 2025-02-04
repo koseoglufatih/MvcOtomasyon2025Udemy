@@ -1,0 +1,41 @@
+﻿@using MvcOtomasyon2025Udemy.Models
+@model List<Employee>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <th>ID</th>
+        <th>Personel Adı</th>
+        <th>Personel Soyadı</th>
+        <th>Görsel</th>
+        <th>Depatman</th>
+        <th>Güncelle</th>
+        <th>Satışlar</th>
+    </tr>
+
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td> @k.PersonelID</td>
+            <td> @k.PersonelName</td>
+            <td> @k.PersonelSurName</td>
+            <td>
+
+
+
+                <img src="@k.EmployeeVisiual" style="100px; height:50px;" />
+            </td>
+            <td> @k.Department.DepartmentName</td>
+            <td><a href="/Employee/GetEmployee/@k.PersonelID" class="btn btn-warning">Güncelle</a></td>
+            <td><a href="/Department/DepartmentEmployeeSales/@k.PersonelID" class="btn btn-default" style="background-color:lightcoral; color:white">Detaylar</a></td>
+        </tr>
+    }
+</table>
+<a href="/Employee/AddEmployee" class="btn btn-info">Personel Ekle</a>
+
+
+

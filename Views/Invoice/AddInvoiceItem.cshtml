@@ -1,0 +1,30 @@
+﻿@model MvcOtomasyon2025Udemy.Models.InvoiceItem
+@{
+    ViewBag.Title = "AddInvoiceItem";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<
+<br />
+<h2>Yeni Fatura Giriş Sayfası</h2>
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.Explanation)
+    @Html.TextBoxFor(x => x.Explanation, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Quantity)
+    @Html.TextBoxFor(x => x.Quantity, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.UnitPrice)
+    @Html.TextBoxFor(x => x.UnitPrice, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Amount)
+    @Html.TextBoxFor(x => x.Amount, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.InvoiceID)
+    @Html.TextBoxFor(x => x.InvoiceID, new { @class = "form-control" })
+    <button class="btn btn-primary">Kaydet</button>
+
+</form>
+
+
+

@@ -1,0 +1,36 @@
+﻿@using MvcOtomasyon2025Udemy.Models;
+@model List<Employee>
+@{
+
+    ViewBag.Title = "DepartmentDetail";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Department Detail Page</h2>
+<br />
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Departman Adı : @ViewBag.d</li>
+</ol>
+<table class="table table-hover">
+    <tr>
+        <th>Personel ID</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Görsel</th>
+        <th>Satışlar</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.PersonelID</td>
+            <td>@x.PersonelName</td>
+            <td>@x.PersonelSurName</td>
+            <td>@x.EmployeeVisiual</td>
+            <td><a href="/Department/DepartmentEmployeeSales/@x.PersonelID" class="btn btn-default" style="background-color:navajowhite">Satışlar</a></td>
+
+        </tr>
+    }
+
+</table>
+

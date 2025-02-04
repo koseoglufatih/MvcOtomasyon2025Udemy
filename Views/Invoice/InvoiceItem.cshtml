@@ -1,0 +1,34 @@
+﻿@using MvcOtomasyon2025Udemy.Models
+@model List<InvoiceItem>
+@{
+    ViewBag.Title = "InvoiceItem";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>InvoiceItem Page</h2>
+<br />
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active"></li>
+</ol>
+<table class="table table-hover">
+    <tr>
+        <th>ID</th>
+        <th>Açıklama</th>
+        <th>Miktar</th>
+        <th>Birim Fiyat</th>
+        <th>Tutar</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.InvoiceItemsID</td>
+            <td>@x.Explanation</td>
+            <td>@x.Quantity</td>
+            <td>@x.UnitPrice</td>
+            <td>@x.Amount</td>
+        </tr>
+    }
+</table>
+<a href="/Invoice/AddInvoiceItem/" class="btn btn-default" style="background-color:darksalmon">Yeni Fatura Kalem Girişi</a>
+
