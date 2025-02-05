@@ -85,5 +85,27 @@ namespace MvcOtomasyon2025Udemy.Controllers
             var result = _context.Products.ToList();
             return View(result);
         }
+
+        [HttpGet]
+        public ActionResult MakeASale(int id)
+        {
+            List<SelectListItem> result3 = (from x in _context.Employees.ToList()
+                                            select new SelectListItem
+                                            {
+                                                Text = x.PersonelName + "" + x.PersonelSurName,
+                                                Value = x.PersonelID.ToString(),
+                                            }).ToList();
+            ViewBag.rslt3 = result3;
+            var result1 = _context.Products.Find(id);
+            ViewBag.rslt1 = result1.ProductID;
+            ViewBag.rslt2 = result1.SalePrice;
+            return View();
+        }
+        [HttpPost]
+        public ActionResult MakeASale(SalesTransaction s)
+        {
+
+            return View();
+        }
     }
 }

@@ -27,6 +27,7 @@
         <th>KATEGORi</th>
         <th>SİL</th>
         <th>GÜNCELLE</th>
+        <th>SATIŞ YAP</th>
     </tr>
     @foreach (var p in Model)
     {
@@ -42,6 +43,9 @@
             </td>
             <td>
                 <a href="/Product/GetProduct/@p.ProductID" class="btn btn-success">Güncelle</a>
+            </td>
+            <td>
+                <a href="/Product/MakeASale/@p.ProductID" class="btn btn-default" style="background-color:aqua">Satış Yap</a>
             </td>
         </tr>
     }

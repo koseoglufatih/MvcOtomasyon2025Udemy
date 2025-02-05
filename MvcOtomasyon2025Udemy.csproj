@@ -127,6 +127,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AlertsController.cs" />
     <Compile Include="Controllers\StatisticsController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\CurrentController.cs" />
@@ -2522,6 +2523,8 @@
     <Content Include="Web\src\scss\variables\_spacing.scss" />
     <Content Include="Web\src\scss\_global.scss" />
     <Content Include="Web\src\scss\_variables.scss" />
+    <Content Include="Views\Alerts\Index.cshtml" />
+    <Content Include="Views\Product\MakeASale.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
