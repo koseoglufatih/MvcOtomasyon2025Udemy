@@ -47,7 +47,7 @@ namespace MvcOtomasyon2025Udemy.Controllers
             DateTime bugun = DateTime.Today;
             var result15 = _context.SalesTransactions.Count(x => x.Date == bugun).ToString();
             ViewBag.d15 = result15;
-            var result16 = _context.SalesTransactions.Where(x => x.Date == bugun).Sum(y => y.TotalAmount).ToString();
+            var result16 = _context.SalesTransactions.Where(x => x.Date == bugun).Sum(y => (decimal?)y.TotalAmount).ToString();
             ViewBag.d16 = result16;
 
             return View();

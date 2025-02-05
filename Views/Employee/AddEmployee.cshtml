@@ -4,27 +4,29 @@
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
-
 <br />
 <h2>New Employee Page</h2>
 <br />
-<form class="form-group" method="post">
-    @Html.LabelFor(x => x.PersonelName)
-    @Html.TextBoxFor(x => x.PersonelName, new { @class = "form-control" })
-    <br />
-    @Html.LabelFor(x => x.PersonelSurName)
-    @Html.TextBoxFor(x => x.PersonelSurName, new { @class = "form-control" })
-    <br />
-    @Html.LabelFor(x => x.EmployeeVisiual)
-    @Html.TextBoxFor(x => x.EmployeeVisiual, new { @class = "form-control" })
-    <br />
-    @Html.LabelFor(x => x.Department)
-    @Html.DropDownListFor(x => x.DepartmentID, (List<SelectListItem>)ViewBag.result1, new { @class = "form-control" })
-    @*@Html.TextBoxFor(x => x.CategoryID, new { @class = "form-control" })*@
-    <br />
+@using (Html.BeginForm("AddEmployee", "Employee", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <form class="form-group" method="post">
+        @Html.LabelFor(x => x.PersonelName)
+        @Html.TextBoxFor(x => x.PersonelName, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.PersonelSurName)
+        @Html.TextBoxFor(x => x.PersonelSurName, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.EmployeeVisiual)
+        @*@Html.TextBoxFor(x => x.EmployeeVisiual, new { @class = "form-control" })*@
+        <input type="file" name="EmployeeVisiual" />
+        <br />
+        @Html.LabelFor(x => x.Department)
+        @Html.DropDownListFor(x => x.DepartmentID, (List<SelectListItem>)ViewBag.result1, new { @class = "form-control" })
+        @*@Html.TextBoxFor(x => x.CategoryID, new { @class = "form-control" })*@
+        <br />
 
-    <button class="btn btn-primary">Kaydet</button>
+        <button class="btn btn-primary">Kaydet</button>
 
-</form>
-
+    </form>
+}
 
