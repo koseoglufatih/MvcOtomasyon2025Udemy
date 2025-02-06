@@ -128,6 +128,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AlertsController.cs" />
+    <Compile Include="Controllers\ShipmentController.cs" />
     <Compile Include="Controllers\StatisticsController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\CurrentController.cs" />
@@ -145,9 +146,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202502021443281_m1.cs" />
-    <Compile Include="Migrations\202502021443281_m1.Designer.cs">
-      <DependentUpon>202502021443281_m1.cs</DependentUpon>
+    <Compile Include="Migrations\202502051326112_m1.cs" />
+    <Compile Include="Migrations\202502051326112_m1.Designer.cs">
+      <DependentUpon>202502051326112_m1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
@@ -163,6 +164,8 @@
     <Compile Include="Models\InvoiceItem.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\SalesTransaction.cs" />
+    <Compile Include="Models\ShipmentDetail.cs" />
+    <Compile Include="Models\ShipmentTracking.cs" />
     <Compile Include="Models\ToDo.cs" />
     <Compile Include="Models\Detail.cs" />
     <Compile Include="Models\Class1.cs" />
@@ -2525,6 +2528,7 @@
     <Content Include="Web\src\scss\_variables.scss" />
     <Content Include="Views\Alerts\Index.cshtml" />
     <Content Include="Views\Product\MakeASale.cshtml" />
+    <Content Include="Views\Shipment\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2558,11 +2562,6 @@
     <Content Include="Scripts\jquery-3.7.0.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202502021443281_m1.resx">
-      <DependentUpon>202502021443281_m1.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <TypeScriptCompile Include="AdminLTE-3.0.4\plugins\fullcalendar-bootstrap\main.d.ts" />
     <TypeScriptCompile Include="AdminLTE-3.0.4\plugins\fullcalendar-daygrid\main.d.ts" />
     <TypeScriptCompile Include="AdminLTE-3.0.4\plugins\fullcalendar-interaction\main.d.ts" />
@@ -2571,6 +2570,11 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202502051326112_m1.resx">
+      <DependentUpon>202502051326112_m1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

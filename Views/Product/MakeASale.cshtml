@@ -17,18 +17,13 @@
     @Html.TextBoxFor(x => x.CurrentID, new { @class = "form-control" })
     <br />
     @Html.LabelFor(x => x.Piece)
-    <input type="number" class="form-control" max="10" min="0" placeholder="Adet Girin" id="txt1" onchange="sum();" />
+    <input type="number" class="form-control" max="10" min="0" placeholder="Adet Girin" id="txt1" onchange="sum();" name="Piece" />
     <br />
     @Html.LabelFor(x => x.Price)
     <input type="text" name="Price" value="@ViewBag.rslt2" class="form-control" id="txt2" onkeyup="sum();" />
     <br />
     @Html.LabelFor(x => x.TotalAmount)
     <input type="text" name="TotalAmount" value="0" class="form-control" id="txt3" readonly onkeyup="sum();" />
-
-
-    <br />
-    @Html.LabelFor(x => x.Date)
-    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
     <br />
     <button class="btn btn-primary">Satış Yap</button>
 </form>

@@ -157,6 +157,30 @@
                 .PrimaryKey(t => t.InvoiceID);
             
             CreateTable(
+                "dbo.ShipmentDetails",
+                c => new
+                    {
+                        ShipmentDetailID = c.Int(nullable: false, identity: true),
+                        Explanation = c.String(maxLength: 300, unicode: false),
+                        TrackingCode = c.String(maxLength: 10, unicode: false),
+                        Employee = c.String(maxLength: 20, unicode: false),
+                        Buyer = c.String(maxLength: 25, unicode: false),
+                        Date = c.DateTime(nullable: false),
+                    })
+                .PrimaryKey(t => t.ShipmentDetailID);
+            
+            CreateTable(
+                "dbo.ShipmentTrackings",
+                c => new
+                    {
+                        ShipmentTrackingID = c.Int(nullable: false, identity: true),
+                        TrackingCode = c.String(maxLength: 10, unicode: false),
+                        Explanation = c.String(maxLength: 100, unicode: false),
+                        DateTime = c.DateTime(nullable: false),
+                    })
+                .PrimaryKey(t => t.ShipmentTrackingID);
+            
+            CreateTable(
                 "dbo.ToDoes",
                 c => new
                     {
@@ -183,6 +207,8 @@
             DropIndex("dbo.SalesTransactions", new[] { "ProductID" });
             DropIndex("dbo.Products", new[] { "CategoryID" });
             DropTable("dbo.ToDoes");
+            DropTable("dbo.ShipmentTrackings");
+            DropTable("dbo.ShipmentDetails");
             DropTable("dbo.Invoices");
             DropTable("dbo.InvoiceItems");
             DropTable("dbo.Expenses");

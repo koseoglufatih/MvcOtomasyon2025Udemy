@@ -104,8 +104,10 @@ namespace MvcOtomasyon2025Udemy.Controllers
         [HttpPost]
         public ActionResult MakeASale(SalesTransaction s)
         {
-
-            return View();
+            s.Date = DateTime.Parse(DateTime.Now.ToShortDateString());
+            _context.SalesTransactions.Add(s);
+            _context.SaveChanges();
+            return RedirectToAction("Index","Sales");
         }
     }
 }

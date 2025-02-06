@@ -13,7 +13,7 @@ namespace MvcOtomasyon2025Udemy.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202502021443281_m1"; }
+            get { return "202502051326112_m1"; }
         }
         
         string IMigrationMetadata.Source

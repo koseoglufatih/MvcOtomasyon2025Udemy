@@ -20,6 +20,8 @@ namespace MvcOtomasyon2025Udemy.Models
         public DbSet<SalesTransaction> SalesTransactions { get; set; }
         public DbSet<Detail> Details { get; set; }
         public DbSet<ToDo> ToDos { get; set; }
+        public DbSet<ShipmentDetail> ShipmentDetails { get; set; }
+        public DbSet<ShipmentTracking> ShipmentTrackings { get; set; }
 
 
     }
