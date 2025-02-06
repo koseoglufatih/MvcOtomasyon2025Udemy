@@ -1,0 +1,21 @@
+﻿@using MvcOtomasyon2025Udemy.Models;
+@model List<ShipmentTracking>
+@{
+    ViewBag.Title = "ShipmentTracking";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br/>
+<table class="table table-striped">
+    <tr>
+        <th>Açıklama</th>
+        <th>Tarih</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.Explanation</td>
+            <td>@x.DateTime</td>
+        </tr>
+    }
+</table>
+

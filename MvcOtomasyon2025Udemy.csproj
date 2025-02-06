@@ -2529,6 +2529,8 @@
     <Content Include="Views\Alerts\Index.cshtml" />
     <Content Include="Views\Product\MakeASale.cshtml" />
     <Content Include="Views\Shipment\Index.cshtml" />
+    <Content Include="Views\Shipment\AddShipment.cshtml" />
+    <Content Include="Views\Shipment\ShipmentTracking.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
