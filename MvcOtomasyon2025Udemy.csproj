@@ -53,6 +53,9 @@
       <HintPath>packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="QRCoder">
+      <HintPath>..\..\..\OneDrive\Masaüstü\QRCoder.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -128,6 +131,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AlertsController.cs" />
+    <Compile Include="Controllers\GraphicController.cs" />
+    <Compile Include="Controllers\QrController.cs" />
     <Compile Include="Controllers\ShipmentController.cs" />
     <Compile Include="Controllers\StatisticsController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
@@ -152,6 +157,8 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Class2.cs" />
+    <Compile Include="Models\Class3.cs" />
     <Compile Include="Models\ClassGroup.cs" />
     <Compile Include="Models\ClassGroup2.cs" />
     <Compile Include="Models\Current.cs" />
@@ -2531,6 +2538,12 @@
     <Content Include="Views\Shipment\Index.cshtml" />
     <Content Include="Views\Shipment\AddShipment.cshtml" />
     <Content Include="Views\Shipment\ShipmentTracking.cshtml" />
+    <Content Include="Views\Qr\Index.cshtml" />
+    <Content Include="Views\Graphic\Index.cshtml" />
+    <Content Include="Views\Graphic\Index2.cshtml" />
+    <Content Include="Views\Graphic\Index3.cshtml" />
+    <Content Include="Views\Graphic\Index4.cshtml" />
+    <Content Include="Views\Graphic\Index5.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
