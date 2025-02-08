@@ -30,8 +30,8 @@ namespace MvcOtomasyon2025Udemy.Controllers
         }
         public ActionResult IncomingMessage()
         {
-
-            return View();
+            var messages = _context.Messagess.ToList(); 
+            return View(messages);
         }
         //[HttpGet]
         //public ActionResult NewMessage()
