@@ -28,5 +28,22 @@ namespace MvcOtomasyon2025Udemy.Controllers
             var result = _context.SalesTransactions.Where(x => x.CurrentID == id).ToList();
             return View(result);
         }
+        public ActionResult IncomingMessage()
+        {
+
+            return View();
+        }
+        //[HttpGet]
+        //public ActionResult NewMessage()
+        //{
+        //    return View();
+        //}
+        //[HttpPost]
+        //public ActionResult NewMessage()
+        //{
+
+        //return View(); 
+
+        //}
     }
 }

@@ -132,6 +132,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AlertsController.cs" />
     <Compile Include="Controllers\GraphicController.cs" />
+    <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\QrController.cs" />
     <Compile Include="Controllers\ShipmentController.cs" />
     <Compile Include="Controllers\StatisticsController.cs" />
@@ -155,6 +156,10 @@
     <Compile Include="Migrations\202502051326112_m1.Designer.cs">
       <DependentUpon>202502051326112_m1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202502061324365_messages.cs" />
+    <Compile Include="Migrations\202502061324365_messages.Designer.cs">
+      <DependentUpon>202502061324365_messages.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Class2.cs" />
@@ -169,6 +174,7 @@
     <Compile Include="Models\FamuContext.cs" />
     <Compile Include="Models\Invoice.cs" />
     <Compile Include="Models\InvoiceItem.cs" />
+    <Compile Include="Models\Messages.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\SalesTransaction.cs" />
     <Compile Include="Models\ShipmentDetail.cs" />
@@ -2546,10 +2552,12 @@
     <Content Include="Views\Graphic\Index5.cshtml" />
     <Content Include="Views\Graphic\Index6.cshtml" />
     <Content Include="Views\Graphic\Index7.cshtml" />
+    <Content Include="Views\CurrentPanel\IncomingMessage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Image\" />
+    <Folder Include="Views\Message\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -2591,6 +2599,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202502051326112_m1.resx">
       <DependentUpon>202502051326112_m1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202502061324365_messages.resx">
+      <DependentUpon>202502061324365_messages.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

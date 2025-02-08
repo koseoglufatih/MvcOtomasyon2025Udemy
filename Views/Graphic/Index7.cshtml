@@ -3,10 +3,8 @@
     ViewBag.Title = "Index7";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
-
 <!DOCTYPE html>
-<br />
-<h2>Ürün - Stok Grafiği Sütunlar</h2>
+
 <html lang="en">
 
 <head>
@@ -31,7 +29,7 @@
 
                 contentType: "application/json",
 
-                url: '@Url.Action("VisualizeProductResult2", "Graphic")',
+                url: '@Url.Action("VisualizeProductResult", "Graphic")',
 
                 success: function (result) {
 
@@ -61,7 +59,7 @@
 
             data.addColumn('string', 'Name');
 
-            data.addColumn('number', 'Stoklar');
+            data.addColumn('number', 'Marks Obtained');
 
             var dataArray = [];
 
@@ -69,7 +67,7 @@
 
             $.each(result, function (i, obj) {
 
-                dataArray.push([obj.Prdct, obj.Stck]);
+                dataArray.push([obj.stdName, obj.marksObtained]);
 
             });
 
@@ -79,11 +77,11 @@
 
             var columnChartOptions = {
 
-                //title: "Ürün - Stok Grafiği",
+                title: "Students Performance",
 
-                width: 1200,
+                width: 1000,
 
-                height: 800,
+                height: 400,
 
                 bar: { groupWidth: "20%" },
 
@@ -92,7 +90,8 @@
 
 
             var columnChart = new google.visualization.ColumnChart(document
-                .getElementById('Columnchart_div'));
+
+                .getElementById('columnchart_div'));
 
 
 
@@ -106,13 +105,9 @@
 
 <body>
 
-    <div id="Columnchart_div"></div>
-
+    <div id="columnchart_div"></div>
 
 
 </body>
 
 </html>
-
-
-
