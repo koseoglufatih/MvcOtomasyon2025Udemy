@@ -1,11 +1,9 @@
 ﻿@using MvcOtomasyon2025Udemy.Models
 @model List<Messages>
-
 @{
-    ViewBag.Title = "IncomingMessage";
+    ViewBag.Title = "SendMessage";
     Layout = "~/Views/Shared/_CurrentLayout.cshtml";
 }
-
 
 <!DOCTYPE html>
 
@@ -182,9 +180,9 @@
                                                 </div>
                                             </td>
                                             <td class="mailbox-star"><a href="#"><i class="fas fa-star-o text-warning"></i></a></td>
-                                            <td class="mailbox-name"><a href="read-mail.html">@x.Sender</a></td>
+                                            <td class="mailbox-name"><a href="read-mail.html">@x.Receiver</a></td>
                                             <td class="mailbox-subject">
-                                                <b>@x.Subject</b> @x.Contents.Substring(0,40).ToString()....
+                                                <b>@x.Subject</b> @x.Contents.Substring(0, 40).ToString()....
                                             </td>
                                             <td class="mailbox-attachment"><i class="fas fa-paperclip"></i></td>
                                             <td class="mailbox-date">@x.DateTime.ToShortDateString()</td>
@@ -275,6 +273,8 @@
     <script src="../../dist/js/demo.js"></script>
 </body>
 </html>
+
+
 
 
 

@@ -2553,6 +2553,8 @@
     <Content Include="Views\Graphic\Index6.cshtml" />
     <Content Include="Views\Graphic\Index7.cshtml" />
     <Content Include="Views\CurrentPanel\IncomingMessage.cshtml" />
+    <Content Include="Views\CurrentPanel\SendMessage.cshtml" />
+    <Content Include="Views\CurrentPanel\MessageDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

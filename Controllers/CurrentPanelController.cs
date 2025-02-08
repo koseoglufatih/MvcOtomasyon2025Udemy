@@ -12,7 +12,7 @@ namespace MvcOtomasyon2025Udemy.Controllers
         // GET: CurrentPanel
         FamuContext _context = new FamuContext();
 
-        [Authorize]
+        //[Authorize]
         public ActionResult Index()
         {
             var mail = (string)Session["CurrentMail"];
@@ -30,8 +30,35 @@ namespace MvcOtomasyon2025Udemy.Controllers
         }
         public ActionResult IncomingMessage()
         {
-            var messages = _context.Messagess.ToList(); 
+            var mail = (string)Session["CurrentMail"];
+            var messages = _context.Messagess.Where(x => x.Receiver == mail).ToList();
+            var incommessages = _context.Messagess.Count(x=>x.Receiver == mail).ToString();
+            ViewBag.d1 = incommessages;
+            var sendmessages = _context.Messagess.Count(x => x.Sender == mail).ToString();
+            ViewBag.d2 = sendmessages;
             return View(messages);
+        }
+
+        public ActionResult SendMessage()
+        {
+            var mail = (string)Session["CurrentMail"];
+            var messages = _context.Messagess.Where(x => x.Sender == mail).ToList();
+            var incommessages = _context.Messagess.Count(x => x.Receiver == mail).ToString();
+            ViewBag.d1 = incommessages;
+            var sendmessages = _context.Messagess.Count(x => x.Sender == mail).ToString();
+            ViewBag.d2 = sendmessages;
+            return View(messages);
+        }
+
+
+        public ActionResult MessageDetail()
+        {
+            var mail = (string)Session["CurrentMail"];
+            var incommessages = _context.Messagess.Count(x => x.Receiver == mail).ToString();
+            ViewBag.d1 = incommessages;
+            var sendmessages = _context.Messagess.Count(x => x.Sender == mail).ToString();
+            ViewBag.d2 = sendmessages;
+            return View();
         }
         //[HttpGet]
         //public ActionResult NewMessage()

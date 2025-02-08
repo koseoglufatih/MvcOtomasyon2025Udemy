@@ -102,8 +102,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         @using (Html.BeginForm("CariLogin1", "Login", FormMethod.Post))
                         {
 
-                            <input type="text" class="name" name="CariMail" Placeholder="Mail Adresiniz" required="" />
-                            <input type="password" class="password" name="CariSifre" Placeholder="Şifreniz" required="" />
+                            <input type="text" class="name" name="CurrentMail" Placeholder="Mail Adresiniz" required="" />
+                            <input type="password" class="password" name="CurrentPassword" Placeholder="Şifreniz" required="" />
                             <input type="submit" value="Giris Yap">
 
                         }
@@ -129,8 +129,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="login-agileits-top">
                         @using (Html.BeginForm("AdminLogin", "Login", FormMethod.Post))
                         {
-                            <input type="text" class="name" name="KulllaniciAd" Placeholder="Kullancı Adı" required="" />
-                            <input type="password" class="password" name="Sifre" Placeholder="Şifre" required="" />
+                            <input type="text" class="name" name="AdminName" Placeholder="Kullanıcı Adı" required="" />
+                            <input type="password" class="password" name="Password" Placeholder="Şifre" required="" />
                             <input type="submit" value="Giriş Yap">
                         }
                     </div>
