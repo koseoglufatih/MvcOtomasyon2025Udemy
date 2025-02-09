@@ -31,7 +31,7 @@ namespace MvcOtomasyon2025Udemy.Controllers
         public ActionResult IncomingMessage()
         {
             var mail = (string)Session["CurrentMail"];
-            var messages = _context.Messagess.Where(x => x.Receiver == mail).ToList();
+            var messages = _context.Messagess.Where(x => x.Receiver == mail).OrderByDescending(x=>x.MessageID).ToList();
             var incommessages = _context.Messagess.Count(x=>x.Receiver == mail).ToString();
             ViewBag.d1 = incommessages;
             var sendmessages = _context.Messagess.Count(x => x.Sender == mail).ToString();
@@ -42,7 +42,7 @@ namespace MvcOtomasyon2025Udemy.Controllers
         public ActionResult SendMessage()
         {
             var mail = (string)Session["CurrentMail"];
-            var messages = _context.Messagess.Where(x => x.Sender == mail).ToList();
+            var messages = _context.Messagess.Where(x => x.Sender == mail).OrderByDescending(z=>z.MessageID).ToList();
             var incommessages = _context.Messagess.Count(x => x.Receiver == mail).ToString();
             ViewBag.d1 = incommessages;
             var sendmessages = _context.Messagess.Count(x => x.Sender == mail).ToString();
@@ -74,12 +74,24 @@ namespace MvcOtomasyon2025Udemy.Controllers
         [HttpPost]
         public ActionResult NewMessage(Messages m)
         {
-         
-           
+            var mail = (string)Session["CurrentMail"];
+            m.DateTime = DateTime.Parse(DateTime.Now.ToShortDateString());
+            m.Sender = mail;
             _context.Messagess.Add(m);
             _context.SaveChanges();
             return View();
 
+        }
+
+        public ActionResult ShipmentTracking (string p)
+        {
+            var shipments = from x in _context.ShipmentDetails select x;
+            if (!string.IsNullOrEmpty(p))
+            {
+                shipments = shipments.Where(y => y.TrackingCode.Contains(p));
+            }
+            return View(shipments.ToList());
+            
         }
     }
 }

@@ -1,0 +1,40 @@
+﻿@using MvcOtomasyon2025Udemy.Models
+@model List<ShipmentDetail>
+
+@{
+    ViewBag.Title = "ShipmentTracking";
+    Layout = "~/Views/Shared/_CurrentLayout.cshtml";
+}
+
+<br />
+@using (Html.BeginForm("Index", "Shipment", FormMethod.Get))
+{
+    <p>
+        Kargo Takip Numarası: @Html.TextBox("p")
+        <input type="submit" value="Ara" />
+    </p>
+}
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <th>Personel</th>
+        <th>Alıcı</th>
+        <th>Takip Kodu</th>
+        <th>Tarih </th>
+        <th>Detaylar</th>
+    </tr>
+
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td> @k.Employee</td>
+            <td>@k.Buyer</td>
+            <td>@k.TrackingCode</td>
+            <td>@k.Date</td>
+            <td><a href="/Shipment/ShipmentTracking/@k.TrackingCode" class="btn btn-default" style="background-color:lightcoral; color:white">Detaylar</a></td>
+        </tr>
+    }
+</table>
+<a href="/Shipment/AddShipment" class="btn btn-info">Yeni Kargo Girişi</a>
+
+
+
