@@ -51,7 +51,18 @@ namespace MvcOtomasyon2025Udemy.Controllers
         }
 
 
-        public ActionResult MessageDetail()
+        public ActionResult MessageDetail(int id)
+        {
+            var result = _context.Messagess.Where(x => x.MessageID == id).ToList();
+            var mail = (string)Session["CurrentMail"];
+            var incommessages = _context.Messagess.Count(x => x.Receiver == mail).ToString();
+            ViewBag.d1 = incommessages;
+            var sendmessages = _context.Messagess.Count(x => x.Sender == mail).ToString();
+            ViewBag.d2 = sendmessages;
+            return View(result);
+        }
+        [HttpGet]
+        public ActionResult NewMessage()
         {
             var mail = (string)Session["CurrentMail"];
             var incommessages = _context.Messagess.Count(x => x.Receiver == mail).ToString();
@@ -60,17 +71,15 @@ namespace MvcOtomasyon2025Udemy.Controllers
             ViewBag.d2 = sendmessages;
             return View();
         }
-        //[HttpGet]
-        //public ActionResult NewMessage()
-        //{
-        //    return View();
-        //}
-        //[HttpPost]
-        //public ActionResult NewMessage()
-        //{
+        [HttpPost]
+        public ActionResult NewMessage(Messages m)
+        {
+         
+           
+            _context.Messagess.Add(m);
+            _context.SaveChanges();
+            return View();
 
-        //return View(); 
-
-        //}
+        }
     }
 }
