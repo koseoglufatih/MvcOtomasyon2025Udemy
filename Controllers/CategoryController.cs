@@ -55,5 +55,28 @@ namespace MvcOtomasyon2025Udemy.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult DenemeTest()
+        {
+            Class4 cs = new Class4();
+            cs.Categories = new SelectList(_context.Categorys, "CategoryID", "CategoryName");
+            cs.Products = new SelectList(_context.Products, "ProductID", "ProductName");
+            return View(cs);
+
+        }
+
+        public JsonResult GetProduct(int p)
+        {
+            var productlist = (from x in _context.Products
+                               join y in _context.Categorys
+                               on x.Category.CategoryID equals y.CategoryID
+                               where x.Category.CategoryID == p
+                               select new
+                               {
+                                   Text = x.ProductName,
+                                   Value = x.ProductID.ToString()
+                               }).ToList();
+            return Json(productlist, JsonRequestBehavior.AllowGet);
+        }
     }
 }
