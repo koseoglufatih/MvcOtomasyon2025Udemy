@@ -17,7 +17,7 @@ namespace MvcOtomasyon2025Udemy.Controllers
         public ActionResult Index()
         {
             var mail = (string)Session["CurrentMail"];
-            var result = _context.Currents.Where(x => x.CurrentMail == mail).ToList();
+            var result = _context.Messagess.Where(x => x.Receiver == mail).ToList();
             ViewBag.m = mail;
             var mailid=_context.Currents.Where(x=>x.CurrentMail==mail).Select(y=>y.CurrentID).FirstOrDefault();
             ViewBag.mid=mailid;
@@ -112,6 +112,16 @@ namespace MvcOtomasyon2025Udemy.Controllers
             FormsAuthentication.SignOut();
             Session.Abandon();
             return RedirectToAction("Index","Login");
+        }
+
+        public PartialViewResult Partial1()
+        {
+            var mail = (string)Session["CurrentMail"];
+            var id = _context.Currents.Where(x => x.CurrentMail == mail).Select(y => y.CurrentID).FirstOrDefault();
+            var currentfind = _context.Currents.Find(id);
+            return PartialView("Partial1", currentfind);
+            
+
         }
     }
 }
