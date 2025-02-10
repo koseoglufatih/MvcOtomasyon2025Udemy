@@ -49,7 +49,6 @@ namespace MvcOtomasyon2025Udemy.Controllers
             return View(messages);
         }
 
-        [Authorize]
         public ActionResult SendMessage()
         {
             var mail = (string)Session["CurrentMail"];
@@ -61,7 +60,6 @@ namespace MvcOtomasyon2025Udemy.Controllers
             return View(messages);
         }
 
-        [Authorize]
         public ActionResult MessageDetail(int id)
         {
             var result = _context.Messagess.Where(x => x.MessageID == id).ToList();
@@ -72,7 +70,6 @@ namespace MvcOtomasyon2025Udemy.Controllers
             ViewBag.d2 = sendmessages;
             return View(result);
         }
-        [Authorize]
         [HttpGet]
         public ActionResult NewMessage()
         {

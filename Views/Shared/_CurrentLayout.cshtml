@@ -46,33 +46,30 @@
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
-                        <div class="sb-sidenav-menu-heading">İşlemler</div>
-                        <a class="nav-link" href="/Category/Index/">
+                        <div class="sb-sidenav-menu-heading">Cari Panel Menüsü</div>
+                        <a class="nav-link" href="/CurrentPanel/Index/">
                             <div class="sb-nav-link-icon"><i class="fas fa-person-booth"></i></div>
                             Profilim
                         </a>
-                        <a class="nav-link" href="/Product/Index/">
+                        <a class="nav-link" href="/CurrentPanel/MyOrders/">
                             <div class="sb-nav-link-icon"><i class="fas fa-box"></i></div>
                             Siparişlerim
                         </a>
-                        <a class="nav-link" href="/Department/Index/">
+                        <a class="nav-link" href="/CurrentPanel/ShipmentTracking/">
                             <div class="sb-nav-link-icon"><i class="fas fa-truck"></i></div>
                             Kargo Takibi
                         </a>
-                        <a class="nav-link" href="/Current/Index/">
+                        <a class="nav-link" href="/CurrentPanel/IncomingMessage/">
                             <div class="sb-nav-link-icon"><i class="fas fa-mail-bulk"></i></div>
                             Mesajlar
                         </a>
-                        <a class="nav-link" href="/Employee/Index/">
+                        <a class="nav-link" href="/CurrentPanel/Logout/">
                             <div class="sb-nav-link-icon"><i class="fas fa-sign-out-alt"></i></div>
                             Çıkış Yap
                         </a>
                     </div>
                 </div>
-                <div class="sb-sidenav-footer">
-                    <div class="small">Logged in as:</div>
-                    Start Bootstrap
-                </div>
+         
             </nav>
         </div>
         <div id="layoutSidenav_content">
@@ -81,18 +78,6 @@
                     @RenderBody()
                 </div>
             </main>
-            <footer class="py-4 bg-light mt-auto">
-                <div class="container-fluid">
-                    <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Your Website 2019</div>
-                        <div>
-                            <a href="#">Privacy Policy</a>
-                            &middot;
-                            <a href="#">Terms &amp; Conditions</a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
