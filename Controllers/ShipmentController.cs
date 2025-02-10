@@ -52,7 +52,6 @@ namespace MvcOtomasyon2025Udemy.Controllers
         {
             //p = "ABC34598NK";
             var result = _context.ShipmentTrackings.Where(x => x.TrackingCode == id).ToList();
-          
             return View(result);
 
         }

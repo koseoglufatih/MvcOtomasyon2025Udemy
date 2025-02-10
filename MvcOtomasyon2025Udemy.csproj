@@ -2557,6 +2557,7 @@
     <Content Include="Views\CurrentPanel\MessageDetail.cshtml" />
     <Content Include="Views\CurrentPanel\NewMessage.cshtml" />
     <Content Include="Views\CurrentPanel\ShipmentTracking.cshtml" />
+    <Content Include="Views\CurrentPanel\CurrentShipmentTracking.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
