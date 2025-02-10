@@ -1,8 +1,14 @@
 ﻿@model MvcOtomasyon2025Udemy.Models.Current
-<form class="form-horizontal">
-
-    @using (Html.BeginForm("UpdateCategory", "Category", FormMethod.Post))
-    {
+@using (Html.BeginForm("UpdateCurrentInformation", "CurrentPanel", FormMethod.Post))
+{
+    <form class="form-horizontal">
+        @*<div class="form-group row">
+            <label for="inputName2" class="col-sm-2 col-form-label">ID</label>
+            <div class="col-sm-10">
+                @Html.TextBoxFor(x => x.CurrentID, new { @class = "form-control" })
+            </div>
+        </div>*@
+        @Html.HiddenFor(x=>x.CurrentID)
         <div class="form-group row">
             <label for="inputName2" class="col-sm-2 col-form-label">Name</label>
             <div class="col-sm-10">
@@ -37,7 +43,7 @@
             <div class="offset-sm-2 col-sm-10">
                 <div class="checkbox">
                     <label>
-                        <input type="checkbox"> Bilgileri okudum <a href="#">Şifre değiştirme şartlarını kabul ediyorum</a>
+                        <input type="checkbox"> Şifremi değiştirmek istiyorum.
                     </label>
                 </div>
             </div>
@@ -47,5 +53,6 @@
                 <button type="submit" class="btn btn-danger">Güncelle</button>
             </div>
         </div>
-    }
-</form>
+        
+    </form>
+}

@@ -50,7 +50,6 @@ namespace MvcOtomasyon2025Udemy.Controllers
 
         public ActionResult UpdateCategory(Category c)
         {
-
             var ktg = _context.Categorys.Find(c.CategoryID);
             ktg.CategoryName = c.CategoryName;
             _context.SaveChanges();

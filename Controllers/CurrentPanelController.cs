@@ -123,5 +123,21 @@ namespace MvcOtomasyon2025Udemy.Controllers
             
 
         }
+
+        public PartialViewResult Partial2()
+        {
+            var datas = _context.Messagess.Where(x => x.Sender == "admin").ToList();
+            return PartialView(datas);
+        }
+
+        public ActionResult UpdateCurrentInformation(Current cr)
+        {
+            var current = _context.Currents.Find(cr.CurrentID);
+            current.CurrentName = cr.CurrentName;
+            current.CurrentSurname = cr.CurrentSurname;
+            current.CurrentPassword = cr.CurrentPassword;
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

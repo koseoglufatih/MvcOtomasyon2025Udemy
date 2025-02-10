@@ -2561,6 +2561,7 @@
     <Content Include="Views\CurrentPanel\ShipmentTracking.cshtml" />
     <Content Include="Views\CurrentPanel\CurrentShipmentTracking.cshtml" />
     <Content Include="Views\CurrentPanel\Partial1.cshtml" />
+    <Content Include="Views\CurrentPanel\Partial2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
