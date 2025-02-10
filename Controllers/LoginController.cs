@@ -8,6 +8,7 @@ using System.Web.Security;
 
 namespace MvcOtomasyon2025Udemy.Controllers
 {
+    [AllowAnonymous]
     public class LoginController : Controller
     {
         // GET: Login

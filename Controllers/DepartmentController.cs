@@ -7,10 +7,12 @@ using System.Web.Mvc;
 
 namespace MvcOtomasyon2025Udemy.Controllers
 {
+    
     public class DepartmentController : Controller
     {
         // GET: Department
         FamuContext _context = new FamuContext();
+       
         public ActionResult Index()
         {
             var results = _context.Departments.Where(x => x.Status == true).ToList();
@@ -18,6 +20,7 @@ namespace MvcOtomasyon2025Udemy.Controllers
         }
 
         [HttpGet]
+  
         public ActionResult AddDepartment()
         {
             return View();
@@ -26,6 +29,7 @@ namespace MvcOtomasyon2025Udemy.Controllers
 
 
         [HttpPost]
+   
         public ActionResult AddDepartment(Department d)
         {
             _context.Departments.Add(d);

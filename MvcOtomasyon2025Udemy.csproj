@@ -131,6 +131,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AlertsController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\GraphicController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\QrController.cs" />
@@ -2562,6 +2563,7 @@
     <Content Include="Views\CurrentPanel\CurrentShipmentTracking.cshtml" />
     <Content Include="Views\CurrentPanel\Partial1.cshtml" />
     <Content Include="Views\CurrentPanel\Partial2.cshtml" />
+    <Content Include="Views\Error\PageError.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
