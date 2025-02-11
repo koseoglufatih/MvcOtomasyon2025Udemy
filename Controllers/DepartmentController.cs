@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace MvcOtomasyon2025Udemy.Controllers
 {
-    
+   
     public class DepartmentController : Controller
     {
         // GET: Department
@@ -20,7 +20,8 @@ namespace MvcOtomasyon2025Udemy.Controllers
         }
 
         [HttpGet]
-  
+
+        [Authorize(Roles ="A")]
         public ActionResult AddDepartment()
         {
             return View();
