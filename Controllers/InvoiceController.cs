@@ -73,6 +73,16 @@ namespace MvcOtomasyon2025Udemy.Controllers
             return RedirectToAction("Index");
 
         }
+
+        public ActionResult Dynamic()
+        {
+           
+                Class5 cs = new Class5();
+                cs.Result1 = _context.Invoices.ToList();
+                cs.Result2 = _context.InvoiceItems.ToList();
+                return View(cs);
+            }
+
+        }
     }
 
-}
